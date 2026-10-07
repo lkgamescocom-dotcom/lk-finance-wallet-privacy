@@ -30,7 +30,7 @@
 <p class="lang"><a href="#english">English version below</a></p>
 
 <h2>Özet</h2>
-<p>LK Finance Wallet kişisel finans kayıtlarınızı (gelir, gider, yatırım, hedef vb.) tutan bir uygulamadır. Verileriniz varsayılan olarak <strong>yalnızca cihazınızda</strong> saklanır. Reklam göstermez, analiz ya da izleme aracı kullanmaz, verilerinizi satmaz ve üçüncü taraflarla paylaşmaz.</p>
+<p>LK Finance Wallet kişisel finans kayıtlarınızı (gelir, gider, yatırım, hedef vb.) tutan bir uygulamadır. Verileriniz varsayılan olarak <strong>yalnızca cihazınızda</strong> saklanır. Reklam göstermez, analiz ya da izleme aracı kullanmaz, verilerinizi satmaz ve reklam amacıyla üçüncü taraflarla paylaşmaz.</p>
 
 <h2>Cihazınızda saklanan veriler</h2>
 <p>Uygulamaya girdiğiniz gelir, gider, yatırım ve benzeri kayıtlar ile uygulama ayarlarınız (tema, fiyat alarm eşikleri vb.) cihazınızdaki uygulama deposunda saklanır. Bu veriler geliştiriciye gönderilmez. Uygulamayı kaldırdığınızda bu veriler cihazdan silinir.</p>
@@ -44,6 +44,14 @@
   <li>Senkronu istediğiniz zaman uygulamadan kapatabilirsiniz. Sunucudaki verinizin silinmesini isterseniz aşağıdaki e-posta adresine yazabilirsiniz.</li>
 </ul>
 
+<h2>İsteğe bağlı: anlık bildirimler</h2>
+<p>Fiyat alarmı ve gün sonu/haftalık özet bildirimleri almak için bildirimleri ve senkronu açarsanız:</p>
+<ul>
+  <li>Cihazınıza ait bir bildirim kimliği (Firebase Cloud Messaging kaydı) ve belirlediğiniz alarm eşikleri geliştiricinin sunucusuna gönderilir ve orada saklanır.</li>
+  <li>Bildirimler, Google'ın Firebase Cloud Messaging hizmeti üzerinden cihazınıza iletilir. Bu hizmet yalnızca bildirimi teslim etmek için kullanılır.</li>
+  <li>Bildirimleri veya senkronu kapattığınızda cihaz kaydı sunucudan silinir. Silinmesini ayrıca isterseniz aşağıdaki e-posta adresine yazabilirsiniz.</li>
+</ul>
+
 <h2>Sunucudan okunan piyasa ve rapor verileri</h2>
 <p>Uygulama; borsa endeksleri, kur, emtia ve kripto fiyatlarını ve geliştiricinin işlettiği bir ticaret raporlama sisteminin (LK Unique Bot) paper-trading durum verilerini sunucudan okur. Bu istekler sizi tanımlayan bir bilgi içermez. Sunucu, teknik işleyiş gereği standart erişim kayıtları (IP adresi, zaman) tutabilir.</p>
 
@@ -51,7 +59,7 @@
 <ul>
   <li>Ad, e-posta, telefon, konum, rehber, fotoğraf veya mikrofon/kamera verisi toplanmaz.</li>
   <li>Reklam kimliği kullanılmaz; reklam ya da analiz SDK'sı yoktur.</li>
-  <li>Uygulama yalnızca <code>INTERNET</code> iznini kullanır.</li>
+  <li>Uygulama yalnızca <code>INTERNET</code> ve (bildirimler için) <code>POST_NOTIFICATIONS</code> izinlerini kullanır.</li>
 </ul>
 
 <h2>Yatırım tavsiyesi değildir</h2>
@@ -72,7 +80,7 @@
 <p class="meta">Last updated: 7 October 2026 · Developer: LK Games Co · <a href="mailto:lkgamesco.com@gmail.com">lkgamesco.com@gmail.com</a></p>
 
 <h2>Summary</h2>
-<p>LK Finance Wallet is a personal finance app for your income, expenses, investments and goals. By default your data stays <strong>on your device only</strong>. The app shows no ads, uses no analytics or tracking tools, does not sell your data and does not share it with third parties.</p>
+<p>LK Finance Wallet is a personal finance app for your income, expenses, investments and goals. By default your data stays <strong>on your device only</strong>. The app shows no ads, uses no analytics or tracking tools, does not sell your data and does not share it with third parties for advertising.</p>
 
 <h2>Data stored on your device</h2>
 <p>The records you enter and your app settings (theme, price alert thresholds, etc.) are stored in the app's local storage on your device and are not sent to the developer. Uninstalling the app removes them from the device.</p>
@@ -86,6 +94,14 @@
   <li>You can turn sync off at any time in the app. To have your server-side data deleted, email the address below.</li>
 </ul>
 
+<h2>Optional: push notifications</h2>
+<p>If you turn on notifications and sync to receive price alerts and end-of-day or weekly summaries:</p>
+<ul>
+  <li>A notification identifier for your device (Firebase Cloud Messaging registration) and the alert thresholds you set are sent to and stored on the developer's server.</li>
+  <li>Notifications are delivered to your device through Google's Firebase Cloud Messaging service, used only to deliver the notification.</li>
+  <li>When you turn notifications or sync off, the device registration is removed from the server. To request deletion explicitly, email the address below.</li>
+</ul>
+
 <h2>Market and report data read from the server</h2>
 <p>The app reads stock indices, currency, commodity and crypto prices, and paper-trading status data from a reporting system (LK Unique Bot) operated by the developer. These requests carry no information that identifies you. The server may keep standard access logs (IP address, time) for technical operation.</p>
 
@@ -93,7 +109,7 @@
 <ul>
   <li>No name, email, phone number, location, contacts, photos, microphone or camera data.</li>
   <li>No advertising ID; no ad or analytics SDKs.</li>
-  <li>The app uses only the <code>INTERNET</code> permission.</li>
+  <li>The app uses only the <code>INTERNET</code> and (for notifications) <code>POST_NOTIFICATIONS</code> permissions.</li>
 </ul>
 
 <h2>Not investment advice</h2>
